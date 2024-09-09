@@ -1,0 +1,336 @@
+// exercicio A
+#include <stdio.h>
+
+int main() {
+    unsigned int n = 4000000000; 
+    printf("%u\n", n); 
+    return 0;
+}
+
+//exercicio B
+
+#include <stdio.h>
+
+int main() {
+    int a = 10; 
+    printf("%d\n", a); 
+    return 0;
+}
+
+//exercicio C
+#include <stdio.h>
+
+int main() {
+    printf("%d ", 4); 
+    printf("%d\n", 2);
+}
+
+//exercicio D
+#include <stdio.h>
+
+int main() {
+    int a; // Declara a variável 'a'
+    printf("Digite um valor inteiro: "); // Opcional: mensagem para o usuário
+    scanf("%d", &a); // Ler um valor inteiro e armazenar na variável 'a'
+    printf("%d\n", a); // Imprimir o valor da variável 'a'
+    return 0;
+}
+
+//exercicio 2 A
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c; // Declaração das variáveis para armazenar os números
+    
+    
+    printf("Digite o primeiro número: ");
+    scanf("%d", &a);
+    
+    printf("Digite o segundo número: ");
+    scanf("%d", &b);
+    
+    printf("Digite o terceiro número: ");
+    scanf("%d", &c);
+    
+    printf("Números na ordem inversa:\n");
+    printf("%d\n", c);
+    printf("%d\n", b);
+    printf("%d\n", a);
+    
+    return 0;
+}
+
+//exercicio 2 B
+#include <stdio.h>
+
+int main() {
+    char nome[100]; 
+    
+    printf("Olá eu sou o Nº 1, como é seu nome?\n");
+    scanf("%99[^\n]", nome);
+    
+    printf("Bem-vindo ao clube, %s!\n", nome);
+    
+    return 0;
+}
+
+// exercicio 2 C
+
+#include <stdio.h>
+
+int main() {
+    char nome[100];
+    int idade; 
+    int diasDeVida;
+    
+    printf("Qual é o seu nome? ");
+    fgets(nome, sizeof(nome), stdin); 
+    
+    nome[strcspn(nome, "\n")] = '\0';
+    
+    printf("Qual é a sua idade? ");
+    scanf("%d", &idade);
+    
+   
+    diasDeVida = idade * 365; 
+    
+    
+    printf("Olá, %s! Aproximadamente, você tem %d dias de vida.\n", nome, diasDeVida);
+    
+    return 0;
+}
+
+//exercicio 2 D
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double raio; 
+    double area; 
+    
+    
+    printf("Digite o raio do círculo: ");
+    scanf("%lf", &raio); 
+        
+    area = M_PI * raio * raio; 
+    
+    printf("A área do círculo com raio %.2lf é %.2lf\n", raio, area);
+    
+    return 0;
+}
+
+//exercicio 2 E
+#include <stdio.h>
+#include <math.h> 
+
+int main() {
+    double largura, altura; 
+    double area; 
+    double tintaNecessaria; 
+    double latasNecessarias; 
+    
+    
+    const double CONSUMO_TINTA = 0.3;
+    const double VOLUME_LATA = 2.0; 
+    
+    
+    printf("Digite a largura da parede em metros: ");
+    scanf("%lf", &largura);
+    
+    printf("Digite a altura da parede em metros: ");
+    scanf("%lf", &altura);
+    
+    area = largura * altura;
+    
+    tintaNecessaria = area * CONSUMO_TINTA;
+    latasNecessarias = ceil(tintaNecessaria / VOLUME_LATA);
+    printf("Para pintar uma parede de %.2lf metros quadrados, você precisará de %.0lf latas de tinta.\n", area, latasNecessarias);
+    
+    return 0;
+}
+
+//exercicio 2 F
+#include <stdio.h>
+
+int main() {
+    double fahrenheit; 
+    double celsius; 
+    
+    
+    printf("Digite a temperatura em graus Fahrenheit: ");
+    scanf("%lf", &fahrenheit); 
+        
+    celsius = (5.0 / 9.0) * (fahrenheit - 32);
+     
+    printf("A temperatura de %.2lf graus Fahrenheit é equivalente a %.2lf graus Celsius.\n", fahrenheit, celsius);
+    
+    return 0;
+}
+//exercicio 2 G
+
+#include <stdio.h>
+
+int main() {
+    double pressao, volume, temperatura; 
+    double massaAr; 
+    
+    printf("Digite a pressão do pneu (P) em psi: ");
+    scanf("%lf", &pressao);
+    
+    
+    printf("Digite o volume do pneu (V) em litros: ");
+    scanf("%lf", &volume);
+        
+    printf("Digite a temperatura do pneu (T) em graus Fahrenheit: ");
+    scanf("%lf", &temperatura);
+    
+    massaAr = (pressao * volume) / (0.37 * (temperatura + 460));
+   
+    printf("A massa de ar no pneu é %.2lf libras.\n", massaAr);
+    
+    return 0;
+}
+//exrcicio 2 H
+
+#include <stdio.h>
+
+int main() {
+    double primeiroTermo;
+    double razao; 
+    int n; 
+    double termoN;     
+    printf("Digite o primeiro termo da Progressão Aritmética (PA): ");
+    scanf("%lf", &primeiroTermo);
+    
+    
+    printf("Digite a razão da PA: ");
+    scanf("%lf", &razao);
+    
+    
+    printf("Digite o número N (posição do termo desejado): ");
+    scanf("%d", &n);
+    
+    
+    termoN = primeiroTermo + (n - 1) * razao;
+    
+    printf("O %d-ésimo termo da Progressão Aritmética é %.2lf.\n", n, termoN);
+    
+    return 0;
+}
+
+//exercicio 2 I
+
+#include <stdio.h>
+#include <math.h> // Biblioteca para a função sqrt()
+
+int main() {
+    double a, b, c;
+    double delta;  
+    double x1, x2;   
+    
+    printf("Digite o coeficiente a: ");
+    scanf("%lf", &a);
+    
+    printf("Digite o coeficiente b: ");
+    scanf("%lf", &b);
+    
+    printf("Digite o coeficiente c: ");
+    scanf("%lf", &c);
+    
+    
+    if (a == 0) {
+        printf("O coeficiente a não pode ser zero para uma equação quadrática.\n");
+        return 1;
+    }
+    
+    
+    delta = b * b - 4 * a * c;
+    
+        if (delta < 0) {
+        printf("A equação não possui raízes reais.\n");
+    } else if (delta == 0) {
+        
+        x1 = -b / (2 * a);
+        printf("A equação possui uma raiz real: x = %.2lf\n", x1);
+    } else {
+        // Caso onde há duas raízes reais
+        x1 = (-b + sqrt(delta)) / (2 * a);
+        x2 = (-b - sqrt(delta)) / (2 * a);
+        printf("A equação possui duas raízes reais: x1 = %.2lf e x2 = %.2lf\n", x1, x2);
+    }
+    
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    int notas1, notas10, notas50, notas100; 
+    double total;     
+    
+    printf("Digite a quantidade de notas de 1 real: ");
+    scanf("%d", &notas1);
+    
+    
+    printf("Digite a quantidade de notas de 10 reais: ");
+    scanf("%d", &notas10);
+    
+   
+    printf("Digite a quantidade de notas de 50 reais: ");
+    scanf("%d", &notas50);
+    
+    
+    printf("Digite a quantidade de notas de 100 reais: ");
+    scanf("%d", &notas100);
+    
+   
+    total = (notas1 * 1) + (notas10 * 10) + (notas50 * 50) + (notas100 * 100);
+    
+    
+    printf("O valor total em dinheiro é R$ %.2lf\n", total);
+    
+    return 0;
+}
+
+//exercicio 2 l
+
+#include <stdio.h>
+
+int main() {
+    int total; // Valor total em dinheiro
+    int notas100, notas50, notas10, notas5, notas1; 
+    
+    printf("Digite o valor total em dinheiro: ");
+    scanf("%d", &total);
+
+    
+    notas100 = total / 100;
+    total %= 100;
+
+    
+    notas50 = total / 50;
+    total %= 50;
+
+    notas10 = total / 10;
+    total %= 10;
+
+    
+    notas5 = total / 5;
+    total %= 5;
+
+    
+    notas1 = total;
+
+    
+    printf("Notas de 100 reais: %d\n", notas100);
+    printf("Notas de 50 reais: %d\n", notas50);
+    printf("Notas de 10 reais: %d\n", notas10);
+    printf("Notas de 5 reais: %d\n", notas5);
+    printf("Notas de 1 real: %d\n", notas1);
+
+    return 0;
+}
+
